@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+
+require 'dotenv'
+require 'jira_git_deliver'
+require 'optparse'
+
+Dotenv.load
+
+jira = JiraGitDeliver::Jira.new(
+  oauth_access_token: ENV['OAUTH_ACCESS_TOKEN'],
+  oauth_secret: ENV['OAUTH_SECRET'],
+  consumer_key: ENV['CONSUMER_KEY'],
+  site: ENV['SITE']
+)
+git = JiraGitDeliver::Git.new
+deliverer = JiraGitDeliver::Deliverer.new(jira, JiraGitDeliver::git)
+
+deliverer.deliver(ENV['FINISHED_ISSUES_JQL'], 'Done')

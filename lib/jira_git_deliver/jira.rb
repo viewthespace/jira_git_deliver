@@ -1,4 +1,4 @@
-require 'jira'
+require 'jira-ruby'
 
 module JiraGitDeliver
   class Jira
@@ -13,10 +13,10 @@ module JiraGitDeliver
       context_path: '')
 
       options = {
-        :private_key => rsa_key,
-        :context_path     => context_path,
-        :consumer_key     => consumer_key,
-        :site             => site
+        private_key: rsa_key,
+        context_path: context_path,
+        consumer_key: consumer_key,
+        site: site
       }
 
       if (options[:private_key] == nil)

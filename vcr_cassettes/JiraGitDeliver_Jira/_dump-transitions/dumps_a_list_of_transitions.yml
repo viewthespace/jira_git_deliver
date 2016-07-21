@@ -1,0 +1,133 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://viewthespace.atlassian.net/rest/api/2/issue/TEST-1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - OAuth gem v0.4.7
+      Authorization:
+      - OAuth oauth_consumer_key="354ddbf22946b9d25c69f6487ec52653", oauth_nonce="CuK24QBtD1CRE4l73GCZpCAjuhCjpJNCDmXfADMyfs",
+        oauth_signature="RviqooAI2b6psyHJ2QbTxtZXq%2B9QeRrIrLJebinkYQZ1dFIBRWP%2FQuN8Vqo9l%2BD7ZrcuYWSsOLUfTz4v5H5vuRsvpgJnTsmJjSj9QUzvj6wDeL6r60tnG5HsugxI%2B8tV83EFuOifwFumfNCCENufaIZDHaS1Z7rEarmalUUYwzk%3D",
+        oauth_signature_method="RSA-SHA1", oauth_timestamp="1468556192", oauth_token="6b3IhroJMCcX0rbEzRSgM7jgNZXNjk8B",
+        oauth_version="1.0"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 15 Jul 2016 04:16:01 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      X-Arequestid:
+      - 16x9988x1
+      X-Asen:
+      - SEN-5165435
+      X-Asessionid:
+      - k0qbj3
+      X-Ausername:
+      - ken
+      X-Atenant-Id:
+      - viewthespace.atlassian.net
+      Cache-Control:
+      - no-cache, no-store, no-transform
+      X-Content-Type-Options:
+      - nosniff
+      Set-Cookie:
+      - JSESSIONID=47C83C9004FB29C01F4AC68100C79C02; Path=/; Secure; HttpOnly
+      - atlassian.xsrf.token=BMPN-KIIT-HLQJ-WTS3|91b270e9942680d9416b351e1d5b45b4478ba919|lin;
+        Path=/; Secure
+      Strict-Transport-Security:
+      - max-age=315360000;includeSubDomains
+    body:
+      encoding: UTF-8
+      string: '{"expand":"renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations","id":"14703","self":"https://viewthespace.atlassian.net/rest/api/2/issue/14703","key":"TEST-1","fields":{"issuetype":{"self":"https://viewthespace.atlassian.net/rest/api/2/issuetype/3","id":"3","description":"A
+        task that needs to be done.","iconUrl":"https://viewthespace.atlassian.net/secure/viewavatar?size=xsmall&avatarId=10318&avatarType=issuetype","name":"Task","subtask":false,"avatarId":10318},"timespent":null,"project":{"self":"https://viewthespace.atlassian.net/rest/api/2/project/10900","id":"10900","key":"TEST","name":"test","avatarUrls":{"48x48":"https://viewthespace.atlassian.net/secure/projectavatar?avatarId=10503","24x24":"https://viewthespace.atlassian.net/secure/projectavatar?size=small&avatarId=10503","16x16":"https://viewthespace.atlassian.net/secure/projectavatar?size=xsmall&avatarId=10503","32x32":"https://viewthespace.atlassian.net/secure/projectavatar?size=medium&avatarId=10503"}},"fixVersions":[],"aggregatetimespent":null,"resolution":{"self":"https://viewthespace.atlassian.net/rest/api/2/resolution/10000","id":"10000","description":"Work
+        has been completed on this issue.","name":"Done"},"resolutiondate":"2016-06-30T09:23:23.717-0400","workratio":-1,"lastViewed":"2016-06-30T22:36:05.112-0400","watches":{"self":"https://viewthespace.atlassian.net/rest/api/2/issue/TEST-1/watchers","watchCount":1,"isWatching":true},"created":"2016-06-04T00:11:24.849-0400","customfield_10020":null,"customfield_10021":null,"customfield_10022":null,"priority":{"self":"https://viewthespace.atlassian.net/rest/api/2/priority/3","iconUrl":"https://viewthespace.atlassian.net/images/icons/priorities/medium.svg","name":"Medium","id":"3"},"customfield_10023":"Not
+        started","customfield_10100":"com.atlassian.servicedesk.plugins.approvals.internal.customfield.ApprovalsCFValue@1389280","customfield_10024":null,"labels":[],"customfield_10016":null,"customfield_10017":null,"customfield_10018":null,"customfield_10019":null,"timeestimate":null,"aggregatetimeoriginalestimate":null,"versions":[],"issuelinks":[],"assignee":null,"updated":"2016-07-15T00:16:00.324-0400","status":{"self":"https://viewthespace.atlassian.net/rest/api/2/status/10001","description":"","iconUrl":"https://viewthespace.atlassian.net/images/icons/statuses/closed.png","name":"Done","id":"10001","statusCategory":{"self":"https://viewthespace.atlassian.net/rest/api/2/statuscategory/3","id":3,"key":"done","colorName":"green","name":"Done"}},"components":[],"timeoriginalestimate":null,"description":null,"customfield_10012":"0|i00m2n:","customfield_10013":null,"customfield_10014":null,"timetracking":{},"customfield_10015":null,"customfield_10401":null,"customfield_10007":null,"attachment":[],"customfield_10009":null,"aggregatetimeestimate":null,"summary":"blarg
+        from in example.rb","creator":{"self":"https://viewthespace.atlassian.net/rest/api/2/user?username=ken","name":"ken","key":"ken","emailAddress":"ken@viewthespace.com","avatarUrls":{"48x48":"https://viewthespace.atlassian.net/secure/useravatar?ownerId=ken&avatarId=11100","24x24":"https://viewthespace.atlassian.net/secure/useravatar?size=small&ownerId=ken&avatarId=11100","16x16":"https://viewthespace.atlassian.net/secure/useravatar?size=xsmall&ownerId=ken&avatarId=11100","32x32":"https://viewthespace.atlassian.net/secure/useravatar?size=medium&ownerId=ken&avatarId=11100"},"displayName":"Ken
+        Liu","active":true,"timeZone":"America/New_York"},"subtasks":[],"reporter":{"self":"https://viewthespace.atlassian.net/rest/api/2/user?username=ken","name":"ken","key":"ken","emailAddress":"ken@viewthespace.com","avatarUrls":{"48x48":"https://viewthespace.atlassian.net/secure/useravatar?ownerId=ken&avatarId=11100","24x24":"https://viewthespace.atlassian.net/secure/useravatar?size=small&ownerId=ken&avatarId=11100","16x16":"https://viewthespace.atlassian.net/secure/useravatar?size=xsmall&ownerId=ken&avatarId=11100","32x32":"https://viewthespace.atlassian.net/secure/useravatar?size=medium&ownerId=ken&avatarId=11100"},"displayName":"Ken
+        Liu","active":true,"timeZone":"America/New_York"},"customfield_10000":null,"aggregateprogress":{"progress":0,"total":0},"customfield_10001":"10001_*:*_3_*:*_50633778_*|*_10202_*:*_1_*:*_2109450928_*|*_10203_*:*_2_*:*_119434177","customfield_10002":null,"customfield_10003":null,"customfield_10004":null,"environment":null,"duedate":null,"progress":{"progress":0,"total":0},"comment":{"comments":[],"maxResults":0,"total":0,"startAt":0},"votes":{"self":"https://viewthespace.atlassian.net/rest/api/2/issue/TEST-1/votes","votes":0,"hasVoted":false},"worklog":{"startAt":0,"maxResults":20,"total":0,"worklogs":[]}}}'
+    http_version: 
+  recorded_at: Fri, 15 Jul 2016 04:16:32 GMT
+- request:
+    method: get
+    uri: https://viewthespace.atlassian.net/rest/api/2/issue/14703/transitions?expand=transitions.fields
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - OAuth gem v0.4.7
+      Authorization:
+      - OAuth oauth_consumer_key="354ddbf22946b9d25c69f6487ec52653", oauth_nonce="6FOUIQaWw3RAN7PvdRjigUwmrCTVGt019zlA4xYg",
+        oauth_signature="S1VGhkKRjsLlF%2F4JiBnFrzsxmFNPDPnJuX0oCCtRL8w4czg1wRC1sqhu5OkFTuc2V312qru8afXxsk70avUwV279g8D9svfW5uSx3tGux31eRfzFtC0fAM8mzeskTAWdP3xGg1ObcyOoysMkQ9O6NKd0u2k313usuxYrYzq2Sno%3D",
+        oauth_signature_method="RSA-SHA1", oauth_timestamp="1468556192", oauth_token="6b3IhroJMCcX0rbEzRSgM7jgNZXNjk8B",
+        oauth_version="1.0"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 15 Jul 2016 04:16:02 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      X-Arequestid:
+      - 16x9989x1
+      X-Asen:
+      - SEN-5165435
+      X-Asessionid:
+      - ne7a0k
+      X-Ausername:
+      - ken
+      X-Atenant-Id:
+      - viewthespace.atlassian.net
+      Cache-Control:
+      - no-cache, no-store, no-transform
+      X-Content-Type-Options:
+      - nosniff
+      Set-Cookie:
+      - JSESSIONID=A64FF7C71F785FCAD90FD430FAFDD166; Path=/; Secure; HttpOnly
+      - atlassian.xsrf.token=BMPN-KIIT-HLQJ-WTS3|f55053693a6aca36a76a907f95190c506c64a39e|lin;
+        Path=/; Secure
+      Strict-Transport-Security:
+      - max-age=315360000;includeSubDomains
+    body:
+      encoding: UTF-8
+      string: '{"expand":"transitions","transitions":[{"id":"11","name":"To Do","to":{"self":"https://viewthespace.atlassian.net/rest/api/2/status/10202","description":"","iconUrl":"https://viewthespace.atlassian.net/","name":"To
+        Do","id":"10202","statusCategory":{"self":"https://viewthespace.atlassian.net/rest/api/2/statuscategory/2","id":2,"key":"new","colorName":"blue-gray","name":"To
+        Do"}},"hasScreen":false,"fields":{}},{"id":"21","name":"In Progress","to":{"self":"https://viewthespace.atlassian.net/rest/api/2/status/10203","description":"","iconUrl":"https://viewthespace.atlassian.net/","name":"In
+        Progress","id":"10203","statusCategory":{"self":"https://viewthespace.atlassian.net/rest/api/2/statuscategory/4","id":4,"key":"indeterminate","colorName":"yellow","name":"In
+        Progress"}},"hasScreen":false,"fields":{}},{"id":"31","name":"Done","to":{"self":"https://viewthespace.atlassian.net/rest/api/2/status/10001","description":"","iconUrl":"https://viewthespace.atlassian.net/images/icons/statuses/closed.png","name":"Done","id":"10001","statusCategory":{"self":"https://viewthespace.atlassian.net/rest/api/2/statuscategory/3","id":3,"key":"done","colorName":"green","name":"Done"}},"hasScreen":false,"fields":{}}]}'
+    http_version: 
+  recorded_at: Fri, 15 Jul 2016 04:16:32 GMT
+recorded_with: VCR 2.9.3

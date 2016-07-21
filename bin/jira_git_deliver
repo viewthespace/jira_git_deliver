@@ -2,9 +2,8 @@
 
 require 'dotenv'
 require 'jira_git_deliver'
-require 'optparse'
 
-Dotenv.load # only used during development
+Dotenv.load # only used during development/test
 
 jira = JiraGitDeliver::Jira.new(
   oauth_access_token: ENV['OAUTH_ACCESS_TOKEN'],
@@ -15,4 +14,4 @@ jira = JiraGitDeliver::Jira.new(
 git = JiraGitDeliver::Git.new
 deliverer = JiraGitDeliver::Deliverer.new(jira, git)
 
-deliverer.deliver(ENV['FINISHED_ISSUES_JQL'], 'Done')
+deliverer.deliver(ENV['FINISHED_ISSUES_JQL'], 'Deployed') #TODO configure this

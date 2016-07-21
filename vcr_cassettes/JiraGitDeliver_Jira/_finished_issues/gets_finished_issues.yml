@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://viewthespace.atlassian.net/rest/api/2/search?jql=project%20=%20TEST%20AND%20status%20=%20%22In%20Progress%22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - OAuth gem v0.4.7
+      Authorization:
+      - OAuth oauth_consumer_key="354ddbf22946b9d25c69f6487ec52653", oauth_nonce="setDcUerTCHMewuIuCFJb4o844QHjvoM1cYHAhz8",
+        oauth_signature="irDeiQYFDt9n%2FAr6NaRS9cbbOcPg6zdIit8HUxSi81zmcKjKgpbmJgAZq8%2FH3tZyrkESuspDjah3kTWQCCnGDibbJcdJoiyrILFsC61AsBXJbC2HIS4GaMvOL840DsLYXuk3JI%2BKgoJvgfntOX7V%2FEgO5jtnCJI2FkYGj4shC14%3D",
+        oauth_signature_method="RSA-SHA1", oauth_timestamp="1468556191", oauth_token="6b3IhroJMCcX0rbEzRSgM7jgNZXNjk8B",
+        oauth_version="1.0"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 15 Jul 2016 04:16:01 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      X-Arequestid:
+      - 16x9987x1
+      X-Asen:
+      - SEN-5165435
+      X-Asessionid:
+      - i90qkm
+      X-Ausername:
+      - ken
+      X-Atenant-Id:
+      - viewthespace.atlassian.net
+      Cache-Control:
+      - no-cache, no-store, no-transform
+      X-Content-Type-Options:
+      - nosniff
+      Set-Cookie:
+      - JSESSIONID=CA9A89877F04E72E41811420BE49C021; Path=/; Secure; HttpOnly
+      - atlassian.xsrf.token=BMPN-KIIT-HLQJ-WTS3|838691d8394e77f285de5be5316a0cb679735136|lin;
+        Path=/; Secure
+      Strict-Transport-Security:
+      - max-age=315360000;includeSubDomains
+    body:
+      encoding: UTF-8
+      string: '{"startAt":0,"maxResults":50,"total":0,"issues":[]}'
+    http_version: 
+  recorded_at: Fri, 15 Jul 2016 04:16:31 GMT
+recorded_with: VCR 2.9.3

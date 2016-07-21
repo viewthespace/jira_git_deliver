@@ -8,12 +8,13 @@ Dotenv.load # only used during development/test
 #TODO validate all environment variables
 
 jira = JiraGitDeliver::Jira.new(
-  oauth_access_token: ENV['OAUTH_ACCESS_TOKEN'],
-  oauth_secret: ENV['OAUTH_SECRET'],
-  consumer_key: ENV['CONSUMER_KEY'],
-  site: ENV['SITE']
+  oauth_access_token: ENV['JIRA_OAUTH_ACCESS_TOKEN'],
+  oauth_secret: ENV['JIRA_OAUTH_SECRET'],
+  consumer_key: ENV['JIRA_CONSUMER_KEY'],
+  site: ENV['JIRA_SITE'],
+  rsa_key: ENV['JIRA_PRIVATE_KEY']
 )
 git = JiraGitDeliver::Git.new
 deliverer = JiraGitDeliver::Deliverer.new(jira, git)
 
-deliverer.deliver(ENV['FINISHED_ISSUES_JQL'], ENV['DELIVERED_STATUS'])
+deliverer.deliver(ENV['JIRA_FINISHED_ISSUES_JQL'], ENV['JIRA_DELIVERED_STATUS'])

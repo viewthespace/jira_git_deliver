@@ -2,6 +2,14 @@
 
 require 'dotenv'
 require 'jira_git_deliver'
+require 'optparse'
+
+options = {}
+OptionParser.new do |opts|
+  opts.on("-d", "--dry-run", "Run without changing JIRA issues") do |dr|
+    options[:dry_run] = dr
+  end
+end.parse!
 
 Dotenv.load # only used during development/test
 
@@ -15,6 +23,6 @@ jira = JiraGitDeliver::Jira.new(
   rsa_key: ENV['JIRA_PRIVATE_KEY']
 )
 git = JiraGitDeliver::Git.new
-deliverer = JiraGitDeliver::Deliverer.new(jira, git)
+deliverer = JiraGitDeliver::Deliverer.new(jira, git, options[:dry_run] != nil)
 
 deliverer.deliver(ENV['JIRA_FINISHED_ISSUES_JQL'], ENV['JIRA_DELIVERED_STATUS'])

@@ -1,8 +1,9 @@
 module JiraGitDeliver
   class Deliverer
-    def initialize(jira, git)
+    def initialize(jira, git, dry_run = false)
       @jira = jira
       @git = git
+      @dry_run = dry_run
     end
 
     # finds issues in delivered status (according to JQL query)
@@ -11,7 +12,7 @@ module JiraGitDeliver
     def deliver(jql, delivered_status_name)
       @jira.finished_issues(jql).map(&:key).each do |issue|
         if @git.contains?(issue)
-          @jira.deliver(issue, delivered_status_name)
+          @jira.deliver(issue, delivered_status_name) unless @dry_run
           puts "delivered issue: #{issue}"
           #TODO project.comment(story, server_name) if server_name
         end

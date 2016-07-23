@@ -39,7 +39,7 @@ module JiraGitDeliver
     # helper with debugging to export the transition id to use
     def dump_transitions(issue)
       issue = @client.Issue.find(issue)
-      available_transitions = @client.Transition.all(:issue => issue)
+      available_transitions = @client.Transition.all(issue: issue)
       available_transitions.each { |ea| puts "#{ea.name} (id #{ea.id})" }
     end
 
@@ -67,7 +67,7 @@ module JiraGitDeliver
       # each issue might have different transitions, so we have to query for each issue
       # this is slow
       issue_obj = @client.Issue.find(issue)
-      available_transitions = @client.Transition.all(:issue => issue_obj)
+      available_transitions = @client.Transition.all(issue: issue_obj)
     end
   end
 end

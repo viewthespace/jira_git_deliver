@@ -32,7 +32,41 @@ the JIRA issues.
 * TODO describe how to set up JIRA credentials
 
 * generate consumer key
+
+SecureRandom.hex(16)
+
 * generate RSA keypair
+
+openssl req -x509 -nodes -newkey rsa:1024 -sha1 -keyout rsakey.pem -out rsacert.pem
+
+JIRA Administration -> Applications -> Application Links
+enter name of application (it asks for a URL, just put any string)
+click "Create new Link"
+error dialog ("No response was received...") click Continue
+
+Application Name: name of the Script
+Application Type: "Generic Application"
+do not enter consumer key here
+edit the application (pencil icon)
+
+select "Incoming Authentication"
+enter the consumer key
+
+click "Save"
+
+
+run oauth script (rsakey.pem file expected in current dir)
+
+browser will open (image here)
+
+click ...
+
+browser will show "Access Approved" message with a verification code
+enter this code on the command line prompt
+and return the access token and secret
+
+
+
 * get OAuth access token and secret
 
 ### Gem configuration
@@ -40,8 +74,11 @@ the JIRA issues.
 The gem expects several environment variables for JIRA API client configuration.
 
 JIRA_OAUTH_ACCESS_TOKEN
+
 JIRA_OAUTH_SECRET
+
 JIRA_CONSUMER_KEY
+
 JIRA_PRIVATE_KEY The text of the RSA private key
 JIRA_SITE The URL of the JIRA server
 

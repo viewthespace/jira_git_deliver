@@ -1,3 +1,4 @@
+[![CircleCI](https://circleci.com/gh/viewthespace/jira_git_deliver.svg?style=svg)](https://circleci.com/gh/viewthespace/jira_git_deliver)
 [![Code Climate](https://codeclimate.com/repos/5792a96bdece34007d00a71f/badges/66036927f73d6aad1e3d/gpa.svg)](https://codeclimate.com/repos/5792a96bdece34007d00a71f/feed)
 
 # JiraGitDeliver

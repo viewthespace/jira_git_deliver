@@ -67,7 +67,7 @@ module JiraGitDeliver
       # each issue might have different transitions, so we have to query for each issue
       # this is slow
       issue_obj = @client.Issue.find(issue)
-      available_transitions = @client.Transition.all(issue: issue_obj)
+      @client.Transition.all(issue: issue_obj)
     end
   end
 end

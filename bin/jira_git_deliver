@@ -14,7 +14,6 @@ end.parse!
 Dotenv.load # only used during development/test
 
 #TODO validate all environment variables
-p ENV
 abort("JQL was not set in environment, exiting") unless ENV['JIRA_FINISHED_ISSUES_JQL']
 
 jira = JiraGitDeliver::Jira.new(

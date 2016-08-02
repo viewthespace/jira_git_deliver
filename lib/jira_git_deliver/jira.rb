@@ -25,8 +25,6 @@ module JiraGitDeliver
       #   options[:private_key_file] = 'rsakey.pem'
       # end
 
-      puts options
-
       @client = ::JIRA::Client.new(options)
       @client.set_access_token(oauth_access_token, oauth_secret)
     end

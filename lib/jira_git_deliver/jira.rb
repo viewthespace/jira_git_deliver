@@ -13,15 +13,17 @@ module JiraGitDeliver
       context_path: '')
 
       options = {
-        private_key: rsa_key,
+        #private_key: rsa_key,
         context_path: context_path,
         consumer_key: consumer_key,
         site: site
       }
 
-      if (options[:private_key] == nil)
-        options[:private_key_file] = 'rsakey.pem'
-      end
+      # hack to write rsa_key to a file
+      File.open('rsakey.pem', 'w') {|f| f << rsa_key}
+      # if (options[:private_key] == nil)
+      #   options[:private_key_file] = 'rsakey.pem'
+      # end
 
       puts options
 

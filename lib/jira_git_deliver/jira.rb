@@ -20,10 +20,10 @@ module JiraGitDeliver
       }
 
       # hack to write rsa_key to a file
-      File.open('rsakey.pem', 'w') {|f| f << rsa_key}
-      # if (options[:private_key] == nil)
-      #   options[:private_key_file] = 'rsakey.pem'
-      # end
+      #File.open('rsakey.pem', 'w') {|f| f << rsa_key}
+      if (options[:private_key] == nil)
+         options[:private_key_file] = 'rsakey.pem'
+      end
 
       @client = ::JIRA::Client.new(options)
       @client.set_access_token(oauth_access_token, oauth_secret)
@@ -35,6 +35,7 @@ module JiraGitDeliver
 
     def deliver(issue, transition_name)
       transition_id = transitions(issue)[transition_name]
+      raise 'unknown target status name' unless transition_id
       transition_issue(issue, transition_id)
     end
 
@@ -59,7 +60,7 @@ module JiraGitDeliver
     private
 
     def transition_issue(issue, transition_id)
-      puts "transitioning issue #{issue} with transition_id #{transition_id}"
+      puts "transitioning issue #{issue} with transition_id: #{transition_id}"
       issue = @client.Issue.find(issue)
       transition = issue.transitions.build
       transition.save!("transition" => { "id" => transition_id })

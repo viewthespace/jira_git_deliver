@@ -49,7 +49,16 @@ module JiraGitDeliver
     # for search options
     def finished_issues(query)
       puts "querying JIRA for finished issues: #{query}"
-      @client.Issue.jql(query)
+      jql_results = []
+      starts_at = 0
+      while(true) do
+        results = jira.instance_variable_get(:@client).Issue.jql("project = 'PRODUCT' AND status = 'Merged'", start_at: starts_at, max_results: 100)
+        break if results.count == 0
+        jql_results.concat(results)
+        starts_at += 100
+      end
+      puts "#{jql_results.count} issues will be transitioned"
+      jql_results
     end
 
     def transitions(issue)

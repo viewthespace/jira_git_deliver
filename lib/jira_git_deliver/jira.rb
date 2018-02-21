@@ -52,7 +52,7 @@ module JiraGitDeliver
       jql_results = []
       starts_at = 0
       while(true) do
-        results = jira.instance_variable_get(:@client).Issue.jql("project = 'PRODUCT' AND status = 'Merged'", start_at: starts_at, max_results: 100)
+        results = @client.Issue.jql("project = 'PRODUCT' AND status = 'Merged'", start_at: starts_at, max_results: 100)
         break if results.count == 0
         jql_results.concat(results)
         starts_at += 100
